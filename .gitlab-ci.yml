@@ -1,0 +1,12 @@
+build:
+  script:
+    # Apply Custome Resource Definition(CRD)
+    - sudo kubectl apply -f traefik-crd/
+    # Apply Role-Based Resource Control
+    - sudo kubectl apply -f traefik-rbac/
+    # Apply Traefik Configuration
+    - sudo kubectl apply -f traefik/
+    # Apply vweb 
+    - sudo kubectl apply -f vweb/
+  tags:
+    - production
